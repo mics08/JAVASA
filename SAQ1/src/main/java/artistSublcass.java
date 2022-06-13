@@ -1,4 +1,7 @@
 
+import javax.xml.transform.OutputKeys;
+
+
 public class artistSublcass extends ArtistTable {//subclass that extends abstract ArtistTable
     
     
@@ -87,16 +90,16 @@ public class artistSublcass extends ArtistTable {//subclass that extends abstrac
                         
                     default:
                        System.out.println("not a valid entry: should be between 1 & 5 only!\nTry again");//if a user enters a wrong value
+                       if (Integer.signum(artistPosition) < 0)  {
+                           System.out.println("Program is exiting now..");
+                           System.exit(0);
+                       }
+                          
                     break; 
-                        
-                    
                         
                     }
                 
-                
-                
             }
-                
                 
      }    
         
