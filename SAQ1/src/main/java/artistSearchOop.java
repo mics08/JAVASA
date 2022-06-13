@@ -12,20 +12,32 @@ public class artistSearchOop{
         Scanner sc = new Scanner(System.in);
         
         int artistPosition = 1;
-        int index =0;
-        while(artistPosition > 0 && artistPosition <= 5 && index <6){
+        int numInvalidAttempts =0;
+        
+        while( numInvalidAttempts < 6) {
+
             System.out.println("Please enter a number between 1 - 5 ");
-            
+
             try{
                 artistPosition = sc.nextInt();
                 singleArtist.salesSummary(artistPosition);
                 System.out.println();
-                index++;
+
             }
             catch(java.util.InputMismatchException e){
                 System.out.println("Please enter a number, not a string");
                 break;
             }
+
+            if (artistPosition > 5) {
+                numInvalidAttempts++;
+            }
+        }
+
+        if (numInvalidAttempts > 5)
+        {
+            System.out.println("6 invalid entries were made\nplease start the program again to retry");
         }
     }
+
 }
