@@ -1,5 +1,3 @@
-import java.io.*;
-
 
 public interface Interface1 {
     
